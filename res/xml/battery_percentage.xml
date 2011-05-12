@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/battery_percentage_title">
+    <CheckBoxPreference
+        android:key="battery_percentage"
+        android:title="@string/battery_percentage_title" />
+    <CheckBoxPreference
+        android:key="battery_percentage_charge"
+        android:title="@string/battery_percentage_charge_title" />
+</PreferenceScreen>
