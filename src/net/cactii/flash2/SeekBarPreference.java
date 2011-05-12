@@ -4,7 +4,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
-package org.oxygen.settings;
+package net.cactii.flash2;
 
 import android.content.Context;
 import android.preference.DialogPreference;

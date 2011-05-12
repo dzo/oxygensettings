@@ -1,4 +1,4 @@
-package org.oxygen.settings;
+package net.cactii.flash2;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -15,6 +15,8 @@ import android.util.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import org.oxygen.settings.R;
 
 public class TorchService extends Service {
 
@@ -93,7 +95,7 @@ public class TorchService extends Service {
         }
 
         this.mReceiver = new IntentReceiver();
-        registerReceiver(this.mReceiver, new IntentFilter("org.oxygen.settings.SET_STROBE"));
+        registerReceiver(this.mReceiver, new IntentFilter("net.cactii.flash2.SET_STROBE"));
 
         this.mNotification = new Notification(R.drawable.torch_notification_icon, getString(R.string.torch_not_torch_title),
                 System.currentTimeMillis());

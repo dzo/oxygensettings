@@ -1,9 +1,6 @@
 package org.oxygen.settings;
 
-import org.oxygen.settings.R;
-
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.PixelFormat;

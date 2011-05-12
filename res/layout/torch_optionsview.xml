@@ -11,7 +11,7 @@
                     android:key="widget_strobe"
                     android:title="@string/torch_setting_widget_strobe"
                     android:defaultValue="false" />          
-             <org.oxygen.settings.SeekBarPreference android:key="widget_strobe_freq"
+             <net.cactii.flash2.SeekBarPreference android:key="widget_strobe_freq"
 		     		android:title="@string/torch_setting_frequency_title"
 			     	android:summary="@string/torch_setting_frequency_summary"
 			     	android:dialogMessage="@string/torch_setting_frequency_dialog"

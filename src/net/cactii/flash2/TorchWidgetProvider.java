@@ -1,4 +1,4 @@
-package org.oxygen.settings;
+package net.cactii.flash2;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -11,6 +11,8 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.widget.RemoteViews;
+
+import org.oxygen.settings.R;
 
 public class TorchWidgetProvider extends AppWidgetProvider {
 

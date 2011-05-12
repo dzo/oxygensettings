@@ -1,7 +1,5 @@
 package org.oxygen.settings;
 
-import org.oxygen.settings.R;
-
 import android.content.Context;
 import android.provider.Settings;
 
@@ -34,6 +32,7 @@ public class PowerWidgetUtil {
     public static final String BUTTON_MEDIA_PLAY_PAUSE = "toggleMediaPlayPause";
     public static final String BUTTON_MEDIA_PREVIOUS = "toggleMediaPrevious";
     public static final String BUTTON_MEDIA_NEXT = "toggleMediaNext";
+
     public static final HashMap<String, ButtonInfo> BUTTONS = new HashMap<String, ButtonInfo>();
     static {
         BUTTONS.put(BUTTON_AIRPLANE, new PowerWidgetUtil.ButtonInfo(
@@ -82,7 +81,13 @@ public class PowerWidgetUtil {
 
     public static String getCurrentButtons(Context context) {
         String buttons = Settings.System.getString(context.getContentResolver(), Settings.System.WIDGET_BUTTONS);
-        if(buttons == null) { buttons = BUTTONS_DEFAULT; }
+        if (buttons == null) {
+            buttons = BUTTONS_DEFAULT;
+            // And the flashlight if available
+            if (context.getResources().getBoolean(R.bool.has_led_flash)) {
+                buttons += BUTTON_DELIMITER + BUTTON_FLASHLIGHT;
+            }
+        }
         return buttons;
     }
 

@@ -2,7 +2,6 @@
     android:minWidth="72dp"
     android:minHeight="72dp"
     android:updatePeriodMillis="3600000"
-    android:configure="org.oxygen.settings.WidgetOptionsActivity"
-    
+    android:configure="net.cactii.flash2.WidgetOptionsActivity"    
     android:initialLayout="@layout/torch_widget" >
 </appwidget-provider>

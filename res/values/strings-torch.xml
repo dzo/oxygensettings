@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="torch_app_name">Torch</string>
+    <string name="torch_about">About: </string>
+    <string name="torch_about_btn">About Torch</string>
+    <string name="torch_about_title">About</string>
+    <string name="torch_about_close">Close</string>
+
+    <string name="torch_description">This program manipulates the camera LED.\n</string>
+    <string name="torch_warning">Warning: Leaving the LED on for a long time might overheat it.\n\nFull brightness \'always on\' has been tested running for 1/2 hr, but there is the risk this could damage the LED.\n</string>
+    <string name="torch_license">Original code from Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nThanks to David Prieto for new UI design.\n\nModified for Oxygen by Adam Green.\n\n</string>
+    <string name="torch_warning_label">Warning</string>
+    <string name="torch_brightwarn">Full brightness has been tested successfully for 1/2 hour of operation, but got quite hot, and started flickering (temporarily) at 45 mins. Long term effects are unknown.\n\nThis is not supported on the widget yet.\n\nClick \'Accept\' if you want to use it at your own risk.</string>
+    <string name="torch_brightwarn_title">Hi-brite \'On\' button!!!</string>
+    <string name="torch_brightwarn_negative">No thanks</string>
+    <string name="torch_brightwarn_accept">Accept</string>
+
+    <string name="torch_label_on">On</string>
+    <string name="torch_label_off">Off</string>
+    <string name="torch_label_high">High brightness</string>
+    <string name="torch_label_strobe">Strobe</string>
+    <string name="torch_label_frequency">Frequency: (slide to change)</string>
+
+    <string name="torch_widget_options">General options</string>
+    <string name="torch_setting_widget_bright">Bright widget</string>
+    <string name="torch_setting_widget_strobe">Strobe flash</string>
+    <string name="torch_setting_frequency_title">Strobe frequency</string>
+    <string name="torch_setting_frequency_summary">Frequency of strobe light</string>
+    <string name="torch_setting_frequency_dialog">Frequency</string>
+    <string name="torch_setting_frequency_hz"> Hz</string>
+    <string name="torch_setting_add_widget">Add widget</string>
+
+    <string name="torch_not_torch_title">Torch on</string>
+    <string name="torch_not_torch_summary">Torch currently on</string>
+
+    <string name="torch_widget_label">Torch</string>
+</resources>

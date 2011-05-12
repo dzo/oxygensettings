@@ -1,4 +1,5 @@
-package org.oxygen.settings;
+
+package net.cactii.flash2;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,7 +27,9 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-public class TorchMainActivity extends Activity {
+import org.oxygen.settings.R;
+
+public class MainActivity extends Activity {
 
     private TorchWidgetProvider mWidgetProvider;
 
@@ -97,7 +100,7 @@ public class TorchMainActivity extends Activity {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked && mPrefs.getBoolean("bright", false))
-                        TorchMainActivity.this.bright = true;
+                        MainActivity.this.bright = true;
                     else if (isChecked)
                         openBrightDialog();
                     else {
@@ -147,7 +150,7 @@ public class TorchMainActivity extends Activity {
                 strobeLabel.setText(strStrobeLabel + ": " +
                         666 / strobeperiod + "Hz / " + 40000 / strobeperiod + "BPM");
 
-                Intent intent = new Intent("org.oxygen.settings.SET_STROBE");
+                Intent intent = new Intent("net.cactii.flash2.SET_STROBE");
                 intent.putExtra("period", strobeperiod);
                 sendBroadcast(intent);
             }
@@ -206,7 +209,7 @@ public class TorchMainActivity extends Activity {
     private void openAboutDialog() {
         LayoutInflater li = LayoutInflater.from(this);
         View view = li.inflate(R.layout.torch_aboutview, null);
-        new AlertDialog.Builder(TorchMainActivity.this).setTitle(this.getString(R.string.torch_about_title)).setView(view)
+        new AlertDialog.Builder(MainActivity.this).setTitle(this.getString(R.string.torch_about_title)).setView(view)
                 .setNegativeButton(this.getString(R.string.torch_about_close), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         // Log.d(MSG_TAG, "Close pressed");
@@ -217,15 +220,15 @@ public class TorchMainActivity extends Activity {
     private void openBrightDialog() {
         LayoutInflater li = LayoutInflater.from(this);
         View view = li.inflate(R.layout.torch_brightwarn, null);
-        new AlertDialog.Builder(TorchMainActivity.this).setTitle(this.getString(R.string.torch_brightwarn_title))
+        new AlertDialog.Builder(MainActivity.this).setTitle(this.getString(R.string.torch_brightwarn_title))
                 .setView(view)
                 .setNegativeButton(this.getString(R.string.torch_brightwarn_negative), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        TorchMainActivity.this.buttonBright.setChecked(false);
+                        MainActivity.this.buttonBright.setChecked(false);
                     }
                 }).setNeutralButton(this.getString(R.string.torch_brightwarn_accept), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        TorchMainActivity.this.bright = true;
+                        MainActivity.this.bright = true;
                         mPrefsEditor.putBoolean("bright", true);
                         mPrefsEditor.commit();
                     }

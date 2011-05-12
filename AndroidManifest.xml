@@ -18,11 +18,15 @@
             </intent-filter>
         </activity>
 
+
+
         <activity android:name=".BatteryPercent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
+
 
         <activity android:name=".PowerWidget">
             <intent-filter>
@@ -42,37 +46,41 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TorchMainActivity"
+
+
+        <activity android:name="net.cactii.flash2.MainActivity"
                   android:label="@string/torch_app_name"
-                  android:screenOrientation="portrait"
+                  android:screenOrientation="portrait" 
                   android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".WidgetOptionsActivity">
+        <activity android:name="net.cactii.flash2.WidgetOptionsActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
-        <receiver android:name=".TorchWidgetProvider" android:label="Torch" >
+        <receiver android:name="net.cactii.flash2.TorchWidgetProvider" android:label="Torch" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="org.oxygen.settings.TORCH_STATE_CHANGED" />
+                <action android:name="net.cactii.flash2.TORCH_STATE_CHANGED" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                        android:resource="@xml/torch_appwidget_info" />
         </receiver>
 
-        <receiver android:name=".TorchSwitch" android:enabled="true" android:label="@string/torch_app_name" >
+        <service android:enabled="true" android:name="net.cactii.flash2.TorchService" />
+
+        <receiver android:name="net.cactii.flash2.TorchSwitch" android:enabled="true" android:label="@string/torch_app_name" >
             <intent-filter>
-                <action android:name="org.oxygen.settings.TOGGLE_FLASHLIGHT"></action>
+                <action android:name="net.cactii.flash2.TOGGLE_FLASHLIGHT"></action>
             </intent-filter>
         </receiver>
 
-        <service android:enabled="true" android:name=".TorchService" />
+
 
     </application>
 </manifest>

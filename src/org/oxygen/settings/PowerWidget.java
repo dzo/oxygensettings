@@ -11,12 +11,14 @@ import android.os.Bundle;
 public class PowerWidget extends PreferenceActivity {
     private static final String KEY_EXP_WIDGET = "expanded_widget";
     private static final String KEY_EXP_WIDGET_HIDE_ONCHANGE = "expanded_hide_onchange";
+    private static final String KEY_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
     private static final String KEY_EXP_WIDGET_COLOR = "expanded_color_mask";
     private static final String KEY_EXP_WIDGET_PICKER = "widget_picker";
     private static final String KEY_EXP_WIDGET_ORDER = "widget_order";
 
     private CheckBoxPreference mPowerWidget;
     private CheckBoxPreference mPowerWidgetHideOnChange;
+    private CheckBoxPreference mPowerWidgetHideScrollBar;
     private Preference mPowerWidgetColor;
     private PreferenceScreen mPowerPicker;
     private PreferenceScreen mPowerOrder;
@@ -25,7 +27,7 @@ public class PowerWidget extends PreferenceActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.power_widget);
+        addPreferencesFromResource(R.xml.menu_powerwidget);
 
         final PreferenceScreen prefSet = getPreferenceScreen();
 
@@ -35,6 +37,9 @@ public class PowerWidget extends PreferenceActivity {
         mPowerWidgetHideOnChange = (CheckBoxPreference) prefSet.findPreference(KEY_EXP_WIDGET_HIDE_ONCHANGE);
         mPowerWidgetHideOnChange.setChecked((Settings.System.getInt(getContentResolver(),
             Settings.System.EXPANDED_HIDE_ONCHANGE, 0) == 1));
+        mPowerWidgetHideScrollBar = (CheckBoxPreference) prefSet.findPreference(KEY_EXP_WIDGET_HIDE_SCROLLBAR);
+        mPowerWidgetHideScrollBar.setChecked((Settings.System.getInt(getContentResolver(),
+            Settings.System.EXPANDED_HIDE_SCROLLBAR, 1) == 1));
         mPowerWidgetColor = prefSet.findPreference(KEY_EXP_WIDGET_COLOR);
         mPowerPicker = (PreferenceScreen)prefSet.findPreference(KEY_EXP_WIDGET_PICKER);
         mPowerOrder = (PreferenceScreen) prefSet.findPreference(KEY_EXP_WIDGET_ORDER);
@@ -51,6 +56,10 @@ public class PowerWidget extends PreferenceActivity {
             value = mPowerWidgetHideOnChange.isChecked();
             Settings.System.putInt(getContentResolver(),
                 Settings.System.EXPANDED_HIDE_ONCHANGE, value ? 1 : 0);
+        } else if (preference == mPowerWidgetHideScrollBar) {
+            value = mPowerWidgetHideScrollBar.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.EXPANDED_HIDE_SCROLLBAR, value ? 1 : 0);
         } else if (preference == mPowerWidgetColor) {
             ColorPickerDialog cp = new ColorPickerDialog(this,
                 mWidgetColorListener,

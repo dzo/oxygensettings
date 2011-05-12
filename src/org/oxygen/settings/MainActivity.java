@@ -25,7 +25,7 @@ public class MainActivity extends PreferenceActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.main);
+        addPreferencesFromResource(R.xml.menu_main);
 
         final PreferenceScreen prefSet = getPreferenceScreen();
 

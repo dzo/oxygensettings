@@ -1,5 +1,6 @@
 package org.oxygen.settings;
 
+import android.R;
 import android.os.Bundle;
 import android.app.Dialog;
 import android.content.Context;
@@ -299,7 +300,7 @@ public class ColorPickerDialog extends Dialog {
         layoutParams.setMargins(10, 0, 10, 5);
         
         TextView tv = new TextView(mContext);
-        tv.setText(R.string.msg_color_picker);
+        tv.setText(org.oxygen.settings.R.string.msg_color_picker);
         layout.addView(tv, layoutParams);
         
         mColorPickerView = new ColorPickerView(getContext(), onColorChangedListener, mInitialColor);        
@@ -318,7 +319,7 @@ public class ColorPickerDialog extends Dialog {
         layout.addView(mEditText, layoutParams);
 
         setContentView(layout);
-        setTitle(R.string.title_color_picker);
+        setTitle(org.oxygen.settings.R.string.title_color_picker);
     }
     
     private OnColorChangedListener onColorChangedListener = new OnColorChangedListener() {

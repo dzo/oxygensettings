@@ -1,6 +1,6 @@
 package org.oxygen.settings;
 
-import org.oxygen.settings.R;
+import com.android.internal.telephony.Phone;
 import org.oxygen.settings.PowerWidgetUtil;
 
 import android.os.Bundle;
@@ -13,8 +13,6 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
-
-import com.android.internal.telephony.Phone;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,8 +42,8 @@ public class PowerWidgetActivity extends PreferenceActivity implements OnPrefere
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.title_expanded_widget);
-        addPreferencesFromResource(R.xml.power_widget_picker);
+        setTitle(R.string.title_widget_buttons);
+        addPreferencesFromResource(R.xml.power_widget);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 

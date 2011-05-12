@@ -1,4 +1,4 @@
-package org.oxygen.settings;
+package net.cactii.flash2;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -15,6 +15,8 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
+
+import org.oxygen.settings.R;
 
 public class WidgetOptionsActivity extends PreferenceActivity implements
         OnSharedPreferenceChangeListener {

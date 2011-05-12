@@ -1,6 +1,5 @@
 package org.oxygen.settings;
 
-import org.oxygen.settings.R;
 import org.oxygen.settings.PowerWidgetUtil;
 import org.oxygen.settings.TouchInterceptor;
 

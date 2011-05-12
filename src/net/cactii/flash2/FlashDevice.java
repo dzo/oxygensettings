@@ -1,4 +1,4 @@
-package org.oxygen.settings;
+package net.cactii.flash2;
 
 import android.os.Build;
 
@@ -14,6 +14,8 @@ public class FlashDevice {
     public static final int STROBE    = -1;
 	public static final int OFF       = 0;
 	public static final int ON        = 1;
+        // device speedy has 4 brightness levels: 125, 126, 127, 128
+	public static final int SPEEDY_ON = 125; 
 	public static final int DEATH_RAY = 3;
 	public static final int HIGH      = 128;
 	public static final int ZEPP_ON   = 100;
@@ -21,7 +23,9 @@ public class FlashDevice {
 
 	private static FlashDevice instance;
 
-	private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier");
+	private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier") && !Build.DEVICE.equals("speedy");
+	private static boolean useZeppDeathRay = Build.DEVICE.contains("zepp") || Build.DEVICE.equals("sholes");
+	private static boolean useCameraInterface = Build.DEVICE.contains("crespo") || Build.DEVICE.contains("p990") || Build.DEVICE.contains("p999");
 
 	private FileWriter mWriter = null;
 
@@ -48,13 +52,14 @@ public class FlashDevice {
 	                break;
 	            case DEATH_RAY:
 	                value = useDeathRay ? DEATH_RAY : HIGH;
-	                value = (Build.DEVICE.contains("zepp") && useDeathRay) ? ZEPP_DEATH_RAY : value;
+	                value = (useZeppDeathRay && useDeathRay) ? ZEPP_DEATH_RAY : value;
 	                break;
 	            case ON:
 	                value = (Build.DEVICE.contains("zepp")) ? ZEPP_ON : value;
+	                value = (Build.DEVICE.contains("speedy")) ? SPEEDY_ON : value;
 	                break;
                 }        
-                if (Build.DEVICE.contains("crespo")) {
+                if (useCameraInterface) {
                     if (mCamera == null) {
                         mCamera = Camera.open();
                     }

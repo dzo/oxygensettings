@@ -1,11 +1,11 @@
-package org.oxygen.settings;
-
-import org.oxygen.settings.R;
+package net.cactii.flash2;
 
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.widget.RemoteViews;
+
+import org.oxygen.settings.R;
 
 // TODO: Get this working properly.
 
@@ -13,8 +13,8 @@ public class SmlTorchWidgetProvider extends TorchWidgetProvider {
 	private static SmlTorchWidgetProvider sInstance;
 
 	static final ComponentName THIS_APPWIDGET =
-		new ComponentName("org.oxygen.settings",
-				"org.oxygen.settings.SmlTorchWidgetProvider");
+		new ComponentName("net.cactii.flash",
+				"net.cactii.flash2.SmlTorchWidgetProvider");
 	
 	static synchronized SmlTorchWidgetProvider getInstance() {
 		if (sInstance == null)

@@ -1,4 +1,4 @@
-package org.oxygen.settings;
+package net.cactii.flash2;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import android.provider.Settings;
 
 public class TorchSwitch extends BroadcastReceiver {
 
-    public static final String TOGGLE_FLASHLIGHT = "org.oxygen.settings.TOGGLE_FLASHLIGHT";
-    public static final String TORCH_STATE_CHANGED = "org.oxygen.settings.TORCH_STATE_CHANGED";
+    public static final String TOGGLE_FLASHLIGHT = "net.cactii.flash2.TOGGLE_FLASHLIGHT";
+    public static final String TORCH_STATE_CHANGED = "net.cactii.flash2.TORCH_STATE_CHANGED";
 
     private SharedPreferences mPrefs;
 

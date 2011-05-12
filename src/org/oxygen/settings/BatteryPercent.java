@@ -19,7 +19,7 @@ public class BatteryPercent extends PreferenceActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.battery_percentage);
+        addPreferencesFromResource(R.xml.menu_battery_percentage);
 
         final PreferenceScreen prefSet = getPreferenceScreen();
 
