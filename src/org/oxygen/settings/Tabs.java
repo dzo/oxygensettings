@@ -25,8 +25,7 @@ public class Tabs extends TabActivity {
 
         tabHost.addTab(tabHost.newTabSpec("tab3")
                 .setIndicator("Updater")
-                .setContent(new Intent(this, UpdateTab.class)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
+                .setContent(new Intent(this, UpdateTab.class)));
     }
 
 }
