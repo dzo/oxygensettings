@@ -2,14 +2,12 @@
 <resources>
     <string name="app_name">Oxygen Settings</string>
 
+    <string name="title_battery_percentage">Battery percentage</string>
     <string name="title_long_press_kill">Long press back to kill</string>
     <string name="summary_long_press_kill">Long-pressing the back key will kill the foreground application</string>
     <string name="title_pinch_reflow">Reflow after pinch in</string>
     <string name="summary_pinch_reflow">Reflow content immediately after pinch to zoom in</string>
     <string name="title_torch">Torch</string>
-
-    <string name="battery_percentage_title">Battery percentage</string>
-    <string name="battery_percentage_charge_title">Charging percentage</string>
 
     <string name="title_color_picker">Pick a color</string>
     <string name="msg_color_picker">Tap on center color to confirm.\nPress back to cancel</string>

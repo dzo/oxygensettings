@@ -3,12 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/app_name">
 
-    <PreferenceScreen android:key="battery_percent"
-        android:title="@string/battery_percentage_title">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="org.oxygen.settings"
-            android:targetClass="org.oxygen.settings.BatteryPercent" />
-    </PreferenceScreen>
+    <CheckBoxPreference android:key="battery_percentage"
+        android:title="@string/title_battery_percentage" />
 
     <CheckBoxPreference android:key="long_press_kill"
         android:title="@string/title_long_press_kill"
@@ -17,13 +13,6 @@
     <CheckBoxPreference android:key="pinch_reflow"
         android:title="@string/title_pinch_reflow"
         android:summary="@string/summary_pinch_reflow" />
-
-    <PreferenceScreen android:key="status_bar_widget"
-        android:title="@string/title_expanded_widget">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="org.oxygen.settings"
-            android:targetClass="org.oxygen.settings.PowerWidget" />
-    </PreferenceScreen>
 
     <PreferenceScreen android:key="torch"
         android:title="@string/title_torch">

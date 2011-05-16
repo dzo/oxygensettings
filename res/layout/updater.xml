@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:keepScreenOn="true"
+              android:gravity="center">
+
+  <ProgressBar android:id="@+id/progress_bar"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:visibility="invisible"
+               android:paddingBottom="5dip"/>
+
+  <TextView android:id="@+id/progress_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:textStyle="bold"
+            android:textSize="16dip"
+            android:text="@string/progress_percentage"/>
+
+  <TextView android:id="@+id/progress_current_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dip"
+            android:textSize="16dip"
+            android:textStyle="bold"
+            android:text="@string/progress_current_text"/>
+               
+  <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/updater_text"
+            android:gravity="center"
+            android:paddingBottom="2dip"/>
+               
+  <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+  
+    <Button android:id="@+id/button_download_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_download_apply"/>
+
+    <Button android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/button_cancel"/>
+                           
+  </LinearLayout>
+  
+  <TextView android:id="@+id/process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textSize="13dip"/>
+  
+</LinearLayout>

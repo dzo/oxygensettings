@@ -1,14 +1,22 @@
 package org.oxygen.settings;
 
+import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
-import android.os.Bundle;
 
-public class PowerWidget extends PreferenceActivity {
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.LayoutAnimationController;
+import android.view.animation.TranslateAnimation;
+import android.widget.ListView;
+
+public class PowerWidgetTab extends PreferenceActivity {
+
     private static final String KEY_EXP_WIDGET = "expanded_widget";
     private static final String KEY_EXP_WIDGET_HIDE_ONCHANGE = "expanded_hide_onchange";
     private static final String KEY_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
@@ -27,7 +35,7 @@ public class PowerWidget extends PreferenceActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.menu_powerwidget);
+        addPreferencesFromResource(R.xml.tab_powerwidget);
 
         final PreferenceScreen prefSet = getPreferenceScreen();
 
@@ -43,6 +51,25 @@ public class PowerWidget extends PreferenceActivity {
         mPowerWidgetColor = prefSet.findPreference(KEY_EXP_WIDGET_COLOR);
         mPowerPicker = (PreferenceScreen)prefSet.findPreference(KEY_EXP_WIDGET_PICKER);
         mPowerOrder = (PreferenceScreen) prefSet.findPreference(KEY_EXP_WIDGET_ORDER);
+
+        // Start animation
+        AnimationSet set = new AnimationSet(true);
+
+        Animation animation = new AlphaAnimation(0.0f, 1.0f);
+        animation.setDuration(50);
+        set.addAnimation(animation);
+
+        animation = new TranslateAnimation(
+            Animation.RELATIVE_TO_SELF, 0.0f,Animation.RELATIVE_TO_SELF, 0.0f,
+            Animation.RELATIVE_TO_SELF, -1.0f,Animation.RELATIVE_TO_SELF, 0.0f
+        );
+        animation.setDuration(100);
+        set.addAnimation(animation);
+
+        LayoutAnimationController controller = new LayoutAnimationController(set, 0.5f);
+        ListView listView = getListView();
+        listView.setLayoutAnimation(controller);
+        // End animation
     }
 
     @Override
@@ -90,4 +117,5 @@ public class PowerWidget extends PreferenceActivity {
             public void colorUpdate(int color) {
             }
         };
+
 }

@@ -6,56 +6,32 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.flash" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-
-        <activity android:name=".MainActivity">
+        <activity android:name=".Tabs"
+                  android:clearTaskOnLaunch="true"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".MainTab" />
 
+        <activity android:name=".PowerWidgetTab" />
+        <activity android:name=".PowerWidgetActivity" />
+        <activity android:name=".PowerWidgetOrderActivity" />
 
-        <activity android:name=".BatteryPercent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-
-
-        <activity android:name=".PowerWidget">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".PowerWidgetActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".PowerWidgetOrderActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-
+        <activity android:name=".UpdateTab" />
 
         <activity android:name="net.cactii.flash2.MainActivity"
-                  android:label="@string/torch_app_name"
-                  android:screenOrientation="portrait" 
-                  android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+                  android:label="@string/torch_app_name" />
 
         <activity android:name="net.cactii.flash2.WidgetOptionsActivity">
             <intent-filter>
@@ -76,11 +52,9 @@
 
         <receiver android:name="net.cactii.flash2.TorchSwitch" android:enabled="true" android:label="@string/torch_app_name" >
             <intent-filter>
-                <action android:name="net.cactii.flash2.TOGGLE_FLASHLIGHT"></action>
+                <action android:name="net.cactii.flash2.TOGGLE_FLASHLIGHT" />
             </intent-filter>
         </receiver>
-
-
-
     </application>
+
 </manifest>
