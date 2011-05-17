@@ -32,8 +32,8 @@ public class PowerWidgetTab extends PreferenceActivity {
     private PreferenceScreen mPowerOrder;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.tab_powerwidget);
 

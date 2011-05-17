@@ -27,8 +27,8 @@ public class MainTab extends PreferenceActivity {
     private PreferenceScreen mTorch;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.tab_main);
 

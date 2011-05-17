@@ -14,17 +14,17 @@ public class Tabs extends TabActivity {
         final TabHost tabHost = getTabHost();
 
         tabHost.addTab(tabHost.newTabSpec("tab1")
-                .setIndicator("Main")
+                .setIndicator("Meow?", getResources().getDrawable(R.drawable.ic_main))
                 .setContent(new Intent(this, MainTab.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
 
         tabHost.addTab(tabHost.newTabSpec("tab2")
-                .setIndicator("Power Widget")
+                .setIndicator("Power Widget", getResources().getDrawable(R.drawable.ic_powerwidget))
                 .setContent(new Intent(this, PowerWidgetTab.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
 
         tabHost.addTab(tabHost.newTabSpec("tab3")
-                .setIndicator("Updater")
+                .setIndicator("Updater", getResources().getDrawable(R.drawable.ic_updater))
                 .setContent(new Intent(this, UpdateTab.class)));
     }
 

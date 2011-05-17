@@ -14,11 +14,15 @@
         android:title="@string/title_pinch_reflow"
         android:summary="@string/summary_pinch_reflow" />
 
-    <PreferenceScreen android:key="torch"
-        android:title="@string/title_torch">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="org.oxygen.settings"
-            android:targetClass="net.cactii.flash2.MainActivity" />
-    </PreferenceScreen>
+    <PreferenceCategory android:title="@string/title_3rd_party">
+
+        <PreferenceScreen android:key="torch"
+            android:title="@string/title_torch">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="org.oxygen.settings"
+                android:targetClass="net.cactii.flash2.MainActivity" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

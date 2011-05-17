@@ -7,6 +7,7 @@
     <string name="summary_long_press_kill">Long-pressing the back key will kill the foreground application</string>
     <string name="title_pinch_reflow">Reflow after pinch in</string>
     <string name="summary_pinch_reflow">Reflow content immediately after pinch to zoom in</string>
+    <string name="title_3rd_party">Third-Party Apps</string>
     <string name="title_torch">Torch</string>
 
     <string name="title_color_picker">Pick a color</string>
