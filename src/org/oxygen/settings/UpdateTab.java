@@ -27,7 +27,7 @@ public class UpdateTab extends Activity {
 
 	private static final String outputFile = "update.zip";
 	private static final String outputPath = "/sdcard/" + outputFile;
-	private static final String inputPath = "http://download.oxygen.im/roms/latest.zip";
+	private static String inputPath = null;
 
 	private Process mProcess;
 	private ProgressBar mProgressBar;
@@ -48,6 +48,8 @@ public class UpdateTab extends Activity {
 		mProgressCurrentTextView = (TextView) findViewById(R.id.progress_current_text);
 		mButtonDownloadApply = (Button) findViewById(R.id.button_download_apply);
 		mButtonCancel = (Button) findViewById(R.id.button_cancel);
+
+		inputPath = getString(R.string.update_url);
 
 		final TextView mProcessTextView = (TextView) findViewById(R.id.process);
 		try {

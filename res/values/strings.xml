@@ -12,4 +12,6 @@
 
     <string name="title_color_picker">Pick a color</string>
     <string name="msg_color_picker">Tap on center color to confirm.\nPress back to cancel</string>
+
+    <string name="update_url">http://download.oxygen.im/roms/bravo/latest-oxygen.zip</string>
 </resources>
