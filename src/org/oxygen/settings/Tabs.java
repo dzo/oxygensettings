@@ -2,13 +2,10 @@ package org.oxygen.settings;
 
 import android.app.TabActivity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.TabHost;
 
 public class Tabs extends TabActivity {
-
-    private static final Boolean deviceBravo = Build.DEVICE.equals("bravo");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +23,9 @@ public class Tabs extends TabActivity {
                 .setContent(new Intent(this, PowerWidgetTab.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
 
-        if (deviceBravo) {
-            tabHost.addTab(tabHost.newTabSpec("tab3")
-                    .setIndicator("Updater", getResources().getDrawable(R.drawable.ic_updater))
-                    .setContent(new Intent(this, UpdateTab.class)));
-        }
+        tabHost.addTab(tabHost.newTabSpec("tab3")
+                .setIndicator("Updater", getResources().getDrawable(R.drawable.ic_updater))
+                .setContent(new Intent(this, UpdateTab.class)));
     }
 
 }
