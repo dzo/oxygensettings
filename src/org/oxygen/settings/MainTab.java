@@ -20,10 +20,12 @@ public class MainTab extends PreferenceActivity {
     private static final String KEY_LONG_PRESS_KILL = "long_press_kill";
     private static final String KEY_PINCH_REFLOW = "pinch_reflow";
     private static final String KEY_TORCH = "torch";
+    private static final String KEY_VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
 
     private CheckBoxPreference mBatteryPercentage;
     private CheckBoxPreference mLongPressKill;
     private CheckBoxPreference mPinchReflow;
+    private CheckBoxPreference mVolBtnMusicControls;
     private PreferenceScreen mTorch;
 
     @Override
@@ -45,6 +47,10 @@ public class MainTab extends PreferenceActivity {
         mPinchReflow = (CheckBoxPreference) prefSet.findPreference(KEY_PINCH_REFLOW);
         mPinchReflow.setChecked((Settings.System.getInt(getContentResolver(),
             Settings.System.WEB_VIEW_PINCH_REFLOW, 1) == 1));
+
+        mVolBtnMusicControls = (CheckBoxPreference) prefSet.findPreference(KEY_VOLBTN_MUSIC_CONTROLS);
+        mVolBtnMusicControls.setChecked((Settings.System.getInt(getContentResolver(),
+            Settings.System.VOLBTN_MUSIC_CONTROLS, 1) == 1));
 
         mTorch = (PreferenceScreen) prefSet.findPreference(KEY_TORCH);
 
@@ -83,6 +89,10 @@ public class MainTab extends PreferenceActivity {
             value = mPinchReflow.isChecked();
             Settings.System.putInt(getContentResolver(),
                 Settings.System.WEB_VIEW_PINCH_REFLOW, value ? 1 : 0);
+        } else if (preference == mVolBtnMusicControls) {
+            value = mVolBtnMusicControls.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.VOLBTN_MUSIC_CONTROLS, value ? 1 : 0);
         } else if (preference == mTorch) {
             startActivity(mTorch.getIntent());
         }

@@ -14,6 +14,10 @@
         android:title="@string/title_pinch_reflow"
         android:summary="@string/summary_pinch_reflow" />
 
+    <CheckBoxPreference android:key="volbtn_music_controls"
+        android:title="@string/title_volbtn_music_controls"
+        android:summary="@string/summary_volbtn_music_controls" />
+
     <PreferenceCategory android:title="@string/title_3rd_party">
 
         <PreferenceScreen android:key="torch"
