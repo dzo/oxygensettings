@@ -14,7 +14,7 @@ public class Tabs extends TabActivity {
         final TabHost tabHost = getTabHost();
 
         tabHost.addTab(tabHost.newTabSpec("tab1")
-                .setIndicator("Meow?", getResources().getDrawable(R.drawable.ic_main))
+                .setIndicator("Mods", getResources().getDrawable(R.drawable.ic_main))
                 .setContent(new Intent(this, MainTab.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
 
